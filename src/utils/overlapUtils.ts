@@ -41,8 +41,8 @@ export function calculateEventDimensions(groups: TypeEvent[][], containerWidth: 
 
         return group.map((event, index) => ({
             ...event,
-            width: groupWidth*1.004,
-            left: groupWidth * index*1.01,
+            width: groupWidth,
+            left: groupWidth * index,
         }));
     });
 }
