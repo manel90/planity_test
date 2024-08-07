@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# React TypeScript Calendar Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React TypeScript application that renders events on a calendar, ensuring that overlapping events do not visually overlap. The application is responsive and allows the user to view events spanning from 00h:00  to 23h:00 .
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Displays events on a calendar
+- Ensures overlapping events have the same width
+- Uses maximum available width for events
+- Responsive design that adjusts to window size
+- Scrollable calendar view
+- Dockerized for easy deployment
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+     src/api - Input json
+        - data.ts
+     src/components - React components
+        - Calendar.tsx - Main calendar component
+        - Event.tsx - Event component
+        - Header.tsx - Header component
+        - TimeLabels.tsx - Time labels component
+     src/utils - Utility functions
+        - overlapUtils.ts - Functions to detect and handle overlapping events
+        - constant.ts - Constants used in the application
+     src/types - TypeScript types
+        - event.ts - Event type definition
+     src/tests - Functions Tests
+        - calendar.test.tsx
+        - overlapUtils.test.ts
+     src/styles - CSS styles
+        - Calendar.css - Styles for the calendar component
+        - Event.css - Styles for the event component
+        - TimeLabels.css - Styles for the time labels component
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Docker Compose](https://docs.docker.com/compose/install/) (optional, for easier container management)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Installation and Use
+####Clone Directory :
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`git clone <URL_DU_REPO>` 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`cd projectName`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Building Docker Images :
 
-### `npm run eject`
+`
+docker-compose build`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Launch Containers:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`
+docker-compose up`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Access the Application :
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Open your web browser and go to the following address: http://localhost:3000/
 
-## Learn More
+## Run Test
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm test`
