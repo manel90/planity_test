@@ -38,7 +38,6 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
     // Detect overlapping events and calculate their dimensions
     const groups = detectOverlaps(events);
     const positionedEvents = calculateEventDimensions(groups, containerWidth);
-    console.log(groups)
 
     return (
         <div className="container" style={{ height: containerHeight }} ref={calendarRef}>
