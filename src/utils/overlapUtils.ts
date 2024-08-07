@@ -13,13 +13,14 @@ export function detectOverlaps(events: TypeEvent[]): TypeEvent[][] {
 
     const groups: TypeEvent[][] = [];
     let currentGroup: TypeEvent[] = [events[0]];
-
     // Group events based on overlap
-    for (let i = 1; i < events.length; i++) {
+    for (let i = 1 ; i < events.length; i++) {
         const event: any = events[i];
         const lastEventInGroup: any = currentGroup[currentGroup.length - 1];
+        const [hours] = event.start.split(':').map(Number);
+        const [lasthours] = lastEventInGroup.start.split(':').map(Number);
 
-        if (event.startMinutes < lastEventInGroup.endMinutes) {
+    if (hours === lasthours ) {
             // If the event overlaps with the last event in the current group, add it to the group
             currentGroup.push(event);
         } else {

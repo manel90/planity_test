@@ -23,7 +23,8 @@ const Event: React.FC<EventProps> = ({ event }:any) => {
                 left: event.left,
             }}
         >
-            {event.id} ** {event.duration} min **
+          <span style={{color:'red',margin:'10px'}}> ** {event.id} **  </span>
+             {event.start} / {event.duration}  min
         </div>
     );
 };
