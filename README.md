@@ -43,9 +43,9 @@ This is a React TypeScript application that renders events on a calendar, ensuri
 ####Clone Directory :
 
 
-`git clone <URL_DU_REPO>` 
+`git clone https://github.com/manel90/planity_test.git` 
 
-`cd projectName`
+`cd planity_test`
 
 #### Building Docker Images :
 
